@@ -20,7 +20,7 @@ module.exports = class Bot {
                     name: (new Date(Date.now() - startTime)).toLocaleString(),
                     type: 'STREAMING'
                 })
-            }, 5000, client);
+            }, 5000, this.client);
             
         });
         
