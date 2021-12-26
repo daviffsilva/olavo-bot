@@ -16,7 +16,7 @@ module.exports = class Bot {
             
             this.client.setInterval((client)=>{    
                     
-                this.client.user.setActivity({
+                client.user.setActivity({
                     name: (new Date(Date.now() - startTime)).toLocaleString(),
                     type: 'STREAMING'
                 })
