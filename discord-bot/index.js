@@ -9,7 +9,7 @@ module.exports = class Bot {
     }
 
     start = () => {
-        this.client.login(process.env.DISCORD_USER_TOKEN || 'NzE2MTQxNTgyNjc1NDc2NTUw.XtHc0g.ps6gdixjXi5ARKp7H2fZFpqoysk');
+        this.client.login(process.env.DISCORD_USER_TOKEN);
         this.client.once('ready', () => {
             console.log('Connected!');
             // client.setInterval((client)=>{        
