@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const config = require("./config.json");
 const fs = require('fs');
 
 const client = new Discord.Client();
@@ -17,20 +16,22 @@ client.once('ready', () => {
     
 });
 
-let fudidos = [];
+client.login(process.env.DISCORD_USER_TOKEN);
+
+let mordidos = [];
 
 client.on('voiceStateUpdate', event => {
-    console.log(fudidos);
+    console.log(mordidos);
     console.log(event.member.user.id.toString());
     let found = false;
-    for (let i = 0; i < fudidos.length; i++) {
-        const element = fudidos[i];
+    for (let i = 0; i < mordidos.length; i++) {
+        const element = mordidos[i];
         if(element === event.member.user.id.toString()){
             found = true;
             break;
         }
     }
-    // console.log(event.member.user.id.toString() in fudidos);
+    // console.log(event.member.user.id.toString() in mordidos);
     if(found){
         event.member.voice.setChannel(null);
     }
@@ -40,7 +41,7 @@ client.on('message', msg => {
     console.log(msg.channel.id);
     if(!msg.author.bot){
         // console.log(msg);
-        // console.log(fudidos.push(msg.mentions.users.array()[0].id));
+        // console.log(mordidos.push(msg.mentions.users.array()[0].id));
         
         // if(msg.channel.guild.id === '369008552280457216'){
         //     console.log(msg.content);
@@ -64,7 +65,7 @@ client.on('message', msg => {
             }else{
                 let fudido = mentionArray[0].id;
                 console.log(fudido);
-                fudidos.push(fudido);
+                mordidos.push(fudido);
                 msg.guild.members.fetch(fudido).then(member => {
                     member.voice.setChannel(null);
                 });
@@ -125,6 +126,4 @@ client.on('message', msg => {
     }
 });
 
-
-client.login(config.token);
 
