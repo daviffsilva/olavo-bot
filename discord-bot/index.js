@@ -6,18 +6,21 @@ module.exports = class Bot {
         this.client = new Discord.Client();
         this.mordidos = [];
         this.start();
+        this.startTime = Date.now();
     }
 
     start = () => {
         this.client.login(process.env.DISCORD_USER_TOKEN);
         this.client.once('ready', () => {
             console.log('Connected!');
-            // client.setInterval((client)=>{        
-            //     // client.user.setActivity({
-            //     //     name: (Date.now() - startTime).toLocaleString(),
-            //     //     type: 'COMPETING'
-            //     // }).catch(console.error)
-            // }, 5000, client);
+            
+            this.client.setInterval((client)=>{    
+                    
+                this.client.user.setActivity({
+                    name: (new Date(Date.now() - startTime)).toLocaleString(),
+                    type: 'STREAMING'
+                })
+            }, 5000, client);
             
         });
         
