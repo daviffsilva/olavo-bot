@@ -15,7 +15,7 @@ module.exports = class Bot {
             console.log('Connected!');
             
             this.client.setInterval((client)=>{    
-                    
+                console.log('stay alive');
                 client.user.setActivity({
                     name: (new Date(Date.now() - this.startTime)).toLocaleString(),
                     type: 'STREAMING'
