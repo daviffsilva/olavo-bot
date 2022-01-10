@@ -4,7 +4,10 @@ const express = require('express');
 
 const PORT = process.env.PORT || 5000
 
-express()
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
-
+let app = express();
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
+app.get('/', (req, res) => {
+  res.send('');
+})
+  
 const DISCORD_BOT = new Bot();
