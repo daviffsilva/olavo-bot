@@ -45,10 +45,10 @@ module.exports = class Bot {
         
         this.client.on('message', msg => {
             console.log(msg.channel.id);
+            msg.channel.send('opa feliz aniversário <@528548722737676297> tmj! 😎👍');
             if(!msg.author.bot){
                 if(msg.content.startsWith('asdfv')){
-                    msg.channel.send('opa feliz aniversário <@528548722737676297> tmj! 😎👍');
-                    
+
                     // msg.guild.roles.create({
                     //     data: {
                     //         name: "Olavo",
