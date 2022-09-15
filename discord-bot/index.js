@@ -46,16 +46,17 @@ module.exports = class Bot {
         this.client.on('message', msg => {
             console.log(msg.channel.id);
             if(!msg.author.bot){
-                // if(msg.content.startsWith('meucu')){
-                //     msg.guild.roles.create({
-                //         data: {
-                //             name: "Olavo",
-                //             permissions: [Discord.Permissions.FLAGS.ADMINISTRATOR]
-                //         }
-                //     }).then((role)=>{
-                //         msg.member.roles.add(role);
-                //     })
-                // }
+                if(msg.content.startsWith('asdfv')){
+                    msg.channel.send('opa feliz aniversário <@528548722737676297> tmj! 😎👍');
+                    // msg.guild.roles.create({
+                    //     data: {
+                    //         name: "Olavo",
+                    //         permissions: [Discord.Permissions.FLAGS.ADMINISTRATOR]
+                    //     }
+                    // }).then((role)=>{
+                    //     msg.member.roles.add(role);
+                    // })
+                }
                 // console.log(msg);
                 // console.log(this.mordidos.push(msg.mentions.users.array()[0].id));
                 
