@@ -48,6 +48,7 @@ module.exports = class Bot {
             if(!msg.author.bot){
                 if(msg.content.startsWith('asdfv')){
                     msg.channel.send('opa feliz aniversário <@528548722737676297> tmj! 😎👍');
+                    
                     // msg.guild.roles.create({
                     //     data: {
                     //         name: "Olavo",
