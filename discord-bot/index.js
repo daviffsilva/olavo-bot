@@ -42,12 +42,26 @@ module.exports = class Bot {
                 event.member.voice.setChannel(null);
             }
         });
-        
+        let i = 0;
         this.client.on('message', msg => {
             console.log(msg.channel.id);
-            // msg.channel.send('opa feliz aniversário <@528548722737676297> tmj! 😎👍');
             if(!msg.author.bot){
-                if(msg.content.startsWith('asdfv')){
+                if(msg.content == 'furst'){
+                    if(i == 0) msg.channel.send('opa feliz aniversário <@133005184337969152> tmj! 😎👍');
+                    else if(i == 1) msg.channel.send('já dei feliz aniversário');
+                    else if(i == 2) msg.channel.send('já foi bixo chega');
+                    else if(i == 3) msg.channel.send('WOOF WOOF');
+                    else if(i == 4) msg.channel.send('tá bom mano, feliz aniversário <@133005184337969152> tmj! xD');
+                    else if(i == 5) msg.channel.send('CHEGA CARA');
+                    else if(i == 6) msg.channel.send('AUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU');
+                    else {
+                        let messagem = 'AUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU';
+                        for(let j = 0; j < i; j++){
+                            messagem += 'UUUUUUUU';
+                        }
+                        msg.channel.send(messagem);
+                    }
+                    i++;
 
                     // msg.guild.roles.create({
                     //     data: {
