@@ -45,6 +45,7 @@ module.exports = class Bot {
         let i = 0;
         this.client.on('message', msg => {
             console.log(msg.channel.id);
+            console.log(msg.content);
             if(!msg.author.bot){
                 if(msg.content == 'furst'){
                     if(i == 0) msg.channel.send('opa feliz aniversário <@133005184337969152> tmj! 😎👍');
